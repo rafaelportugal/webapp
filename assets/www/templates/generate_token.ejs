@@ -1,0 +1,48 @@
+
+<div class='information'>
+    <h2>Gerando token</h2>
+    <p>Escolha o centro de custos na listagem abaixo e clique no botão para gerar o token.</p>
+</div>
+
+<ul class='cost_centers'>
+    <% for(k in cats) {%>
+        <li><span><%= k %></span>
+        <ul>
+        <% for(var i=0; i<cats[k]['ccs'].length; i++) {%>
+        <li>
+            <input type="radio" name="cc" value="<%= cats[k]['ccs'][i].pk %>" id="<%= cats[k]['ccs'][i].pk %>">
+            <label for="<%= cats[k]['ccs'][i].pk %>"><%= cats[k]['ccs'][i].name %></label>
+        </li>
+        <% } %>
+
+        <% for(in_k in cats[k]['inner']) {%>
+               <li><span><%= in_k %></span>
+                <ul>
+                <% for(var ii=0; ii<cats[k]['inner'][in_k].length; ii++) {%>
+                    <li>
+                    <input type="radio" name="cc" value="<%= cats[k]['inner'][in_k][ii].pk %>" id="<%= cats[k]['inner'][in_k][ii].pk %>">
+                    <label for="<%= cats[k]['inner'][in_k][ii].pk %>"><%= cats[k]['inner'][in_k][ii].name %></label>
+                    </li>
+                <% } %>
+                </ul>
+            </li>
+        <% } %>
+
+        </ul>
+
+        </li>
+
+    <% } %>
+
+
+    <% for(var i=0; i<ccs.length; i++) {%>
+        <li>
+            <input type="radio" name="cc" value="<%= ccs[i].pk %>" id="<%= ccs[i].pk %>">
+            <label for="<%= ccs[i].pk %>"><%= ccs[i].name %></label>
+        </li>
+    <% } %>
+
+
+    <div class='center'>
+        <a id="btn-new-token" href="#" class="yellow_button">Gerar token</a>
+    </div>

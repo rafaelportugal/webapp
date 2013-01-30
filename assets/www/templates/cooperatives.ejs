@@ -1,0 +1,17 @@
+
+<div class="information">
+    <h2>Cooperativas</h2>
+    <p>Ligue para uma das cooperativas listadas abaixo e informe o numero do token que você deseja utilizar.</p>
+</div>
+
+<ul class='cooperatives'>
+    <% for(var i=0; i<cooperatives.length; i++) {%>
+    <li class='cooperative coop-number' data-number='<%= cooperatives[i].phone_1 %>'>
+        <ul>
+            <li class='grid-45 name'><%= cooperatives[i].name %></li>
+            <li class='grid-45'><%= cooperatives[i].phone_1 %></li>
+            <li class='grid-10'><a href="#"><img src="img/bt-call.png" alt="Telefonar"></a></li>
+        </ul>
+    </li>
+    <% } %>
+</ul>

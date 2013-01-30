@@ -1,0 +1,286 @@
+html {
+	height: 100%;
+	/*overflow-y: scroll;*/
+	/*overflow: hidden;*/
+}
+body {
+    /*overflow: auto;*/
+    height: 100%;
+	font-size: 1em;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+body.android {
+	font-size: 1em;	
+}
+
+h1 {
+	font-size: 1.5em;
+	padding: 0;
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.3em;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-transform: none;
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+	padding: 0; 
+}
+
+
+.bg-login {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(#424242));
+	background-image: -webkit-linear-gradient( black, #424242 );
+	background-image: -moz-linear-gradient( black, #424242 );
+	background-image: -ms-linear-gradient( black, #424242 );
+	background-image: -o-linear-gradient( black, #424242 );
+	background-image: linear-gradient( black, #424242 );
+}
+
+.content {
+	width: 90%;
+	padding: 0 5%;
+}
+
+.login label {
+	display: block;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 1%;
+}
+.login label.last {
+	margin-top: 4%;1
+}
+
+.login img {
+	width: 100%;
+	margin: 15% 0 5%;
+}
+.login .fields {
+	font-size: 1em;
+	width: 96%;
+	background-color: #fff;
+	border-radius: 10px;
+	border: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 0 2%;
+	margin-bottom: 3%;
+	line-height: 3em;
+    text-align: center;
+}
+.login input[type='button'] {
+	width: 100%;
+	padding: 0;
+	margin-top: 6%;
+	border-radius: 10px;
+	background: #ffba00;
+	border: 1px solid; 
+	border-color: #044062;
+	font-weight: bold;
+	color: #fff;
+	font-size: 1em;
+	line-height: 3em;
+}
+
+header {
+	width: 90%;
+	padding: 0 5%;
+	position: fixed;
+	height: 40px;
+	background: black;
+	top: 0;
+}
+
+header h1 img{
+	height: 20px;
+	margin-top: 10px;
+	float: left;
+}
+header a {
+	float: right;
+}
+header a img {
+	height: 34px;
+	margin-top: 3px;
+}
+
+
+
+.main {
+	margin-top: 40px;
+}
+
+
+
+.main h2{
+	font-size: 0.9em;
+}
+.main p {
+	font-size: 0.8em;
+}
+
+.information {
+	background: #d5d5d5;
+	width: 90%;
+	padding: 20px 5%;
+}
+
+.information h2 {
+	line-height: 1.5em;
+}
+
+.information p {
+	margin-bottom: 5px;
+	color: #3e3e3e;
+}
+
+.information div {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.yellow_button {
+	border-radius: 5px;
+	background: #ffba00;
+	padding: 8px 15px;
+	color: #000;
+	font-size: 0.9em;
+}
+
+.generated {
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.generated h2 {
+	float: left;
+	margin-top: 5px;s
+}
+
+.generated a {
+	float: right;
+}
+
+.generated p {
+	clear: both;
+}
+
+
+.tokens {
+	border-top: 1px solid #3e3e3e;
+}
+.tokens .token, .cooperatives .cooperative {
+	border-bottom: 1px solid #3e3e3e;
+	width: 90%;
+	padding: 10px 5%;
+	overflow: hidden;
+}
+
+.token ul li {
+	text-align: center;
+	font-size: 0.7em;
+}
+.token span {
+	font-weight: bold;
+	display: block;
+	font-size: 1.6em;
+}
+.token a img{
+	margin-top: 5px;
+}
+
+.cooperative li {
+	line-height: 2em;
+	font-size: 0.8em;
+}
+.cooperative a img {
+	height: 2em;
+}
+.cooperative li.name {
+	font-weight: bold;
+}
+
+.cost_centers {
+	width: 90%;
+	padding: 20px  5%;
+}
+
+.cost_centers li {
+	line-height: 2em;
+}
+.cost_centers span {
+	font-weight: bold;
+}
+
+.cost_centers ul {
+	margin-left: 20px;
+}
+
+.grid-35 {
+	width: 35%;
+	float: left;
+}
+.grid-30 {
+	width: 30%;
+	float: left;
+}
+.grid-45 {
+	width: 45%;
+	float: left;
+}
+.grid-10 {
+	width: 10%;
+	float: left;
+}
+
+footer {
+	margin: 20px 0;
+	width: 90%;
+	padding: 0 5%;
+	padding-bottom: 15px;
+	text-align: center;
+}
+footer.border {
+	border-top: 1px solid #3e3e3e;
+}
+
+footer a{
+	display: inline-block;
+	padding-left: 35px;
+	background: url('../img/logout.png') no-repeat;
+	line-height: 27px;
+	margin-top: 20px;
+}
+
+
+.center {
+	text-align: center;
+}
+
+#loader {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -14px
+
+}

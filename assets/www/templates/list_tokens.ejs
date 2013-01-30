@@ -1,0 +1,34 @@
+    <div class="information">
+        <h2>Solicitar corrida</h2>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiu.</p>
+        <div>
+            <a id="btn-generate-token" href="#" class="yellow_button">Gerar token</a>
+        </div>
+    </div>
+
+    <div class='content generated'>
+        <h2>Tokens Gerados</h2>
+        <a id="btn-refresh" href="#">
+            <img src="img/refresh.jpg" alt="Atualizar">
+        </a>
+        <p>Ao entrar no táxi, informe o token para o taxista, e na hora do pagamento, insira a contra-senha.</p>
+    </div>
+    
+    <ul class='tokens'>
+
+        <% for(var i=0; i<tokens.length; i++) {%>
+            <li class='token'>
+            <ul>
+                <li></li>
+                <li class='grid-35'>Token <span><%= tokens[i].token %></span></li>
+                <li class='grid-35'>Senha <span><%= tokens[i].pwd %></span></li>
+                <li class='grid-30'><a class="btn-cancel" href="#" data-pk="<%= tokens[i].token %>">
+                    <img src="img/delete-icon.png" alt="Deletar token"></a>
+                </li>
+            </ul>
+            </li>
+        <% } %>
+    </ul>
+	<br />
+
