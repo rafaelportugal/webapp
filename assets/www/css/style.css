@@ -12,7 +12,7 @@ body {
 }
 
 body.android {
-	font-size: 1em;	
+	font-size: 1em;
 }
 
 h1 {
@@ -43,7 +43,7 @@ ul {
 }
 li {
 	list-style: none;
-	padding: 0; 
+	padding: 0;
 }
 
 
@@ -94,7 +94,7 @@ li {
 	margin-top: 6%;
 	border-radius: 10px;
 	background: #ffba00;
-	border: 1px solid; 
+	border: 1px solid;
 	border-color: #044062;
 	font-weight: bold;
 	color: #fff;
@@ -215,7 +215,7 @@ header a img {
 }
 .cooperative a img {
 	height: 2em;
-}
+}ffba00
 .cooperative li.name {
 	font-weight: bold;
 }
@@ -223,6 +223,7 @@ header a img {
 .cost_centers {
 	width: 90%;
 	padding: 20px  5%;
+	margin-bottom: 30px;
 }
 
 .cost_centers li {
@@ -230,10 +231,23 @@ header a img {
 }
 .cost_centers span {
 	font-weight: bold;
+	display: block;
+	background: #d5d5d5;
+	border-radius: 5px;
+	line-height: 2.5em;
+	padding-left: 10%;
+	width: 90%;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .cost_centers ul {
-	margin-left: 20px;
+	margin-left: 15%;
+}
+
+.cost_centers_button {
+	padding: 0  0 60px 0;
+	border-bottom: 1px solid #3e3e3e;
 }
 
 .grid-35 {
