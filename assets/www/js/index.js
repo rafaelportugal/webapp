@@ -48,9 +48,21 @@ var create_cooperatives = function(){
 }
 
 
+var onLogout = function(buttonIndex){
+	if (buttonIndex == 1) {
+		app.logout();
+	}
+}
+
 var setup_header_footer = function(){
     $("#btn-logout").bind("click", function(){
-        app.logout();
+		navigator.notification.confirm(
+        	'Deseja realmente sair?',
+        	onLogout,
+        	'Paggtaxi',
+        	'Sim,Não'
+    	);
+	
     });
     
     $("#link-cooperatives").bind("click", function(){
@@ -102,26 +114,31 @@ var create_list_tokens = function(){
 }
 
 var setup_generate_token = function(){
-    
-    
+
     $('#btn-new-token').bind('click', function(){
         var cc = $("input[name='cc']:checked").val();
         app.generate_token(cc);
     });
-    
-    
+        
 }
 
 
 
 var create_generate_token = function(){
-    var data = {
+    $('#link-tokens').show();
+    $('#link-cooperatives').hide();
+
+	var data = {
         ccs: app.cc_tree['ccs'],
         cats: app.cc_tree['cats'],
     };
     var html = app.template_generate_token.render(data);
     $('#main').html( html );
     setup_generate_token();
+	
+	if (!data['ccs'] && !data['cats']){
+		alert("Sua empresa ainda não cadastrou nenhum centro de custo parq eu você possa gerar um token.");
+	}
 }
 
 
@@ -129,7 +146,7 @@ var create_generate_token = function(){
 var app = {
     initialize: function() {
         this.bindEvents();
-        this.host = 'https://paggtaxi-staging.herokuapp.com/api-company/';
+        this.host = 'https://paggtaxi-testing.herokuapp.com/api-company/';
         this.url_login = this.host + 'login/';
         this.url_tokens = this.host + 'list-tokens/';
         this.url_cancel_token = this.host + 'cancel/';
@@ -251,16 +268,20 @@ var app = {
                url: app.url_tokens,
                data: {'cc': cc_id, 'pk': this.pk, 'auth_token': this.auth_token},
                success:function(data){
-                   data = $.parseJSON(data);
-                   window.localStorage.setItem("cooperatives", JSON.stringify(data.cooperatives));
-                   window.localStorage.setItem("tokens", JSON.stringify(data.tokens));
-                   app.loadData();
-                   create_list_tokens();
+				   data = $.parseJSON(data);
+                   if (!data.sucess){
+						alert("Não foi possível gerar um token pois seu limite foi atingido.");
+				   } else {
+					   	window.localStorage.setItem("cooperatives", JSON.stringify(data.cooperatives));
+                   		window.localStorage.setItem("tokens", JSON.stringify(data.tokens));
+                   		app.loadData();
+				   }				   
+				   create_list_tokens();
                    app.hide_spinner();
                    return;
                },
                error: function(data){
-                   alert("Não foi possível gerar um token");
+                   alert("Não foi possível gerar um token, verifique o seu limite junto ao gestor.");
                    app.hide_spinner();
                    return;
                }
@@ -314,11 +335,13 @@ var app = {
                success:function(data){
                     app.loadData();
                     create_list_tokens();
-                    app.hide_spinner();
+					app.hide_spinner();
+                    app.refresh_tokens();					
                     return;
                }, error: function(data){
                     create_list_tokens();
                     app.hide_spinner();
+                    app.refresh_tokens();					
                     return;
                }
         });

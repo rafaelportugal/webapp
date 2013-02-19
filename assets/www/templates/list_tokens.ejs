@@ -1,7 +1,7 @@
     <div class="information">
         <h2>Solicitar corrida</h2>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiu.</p>
+        <p>Gere um token para fazer sua corrida agora mesmo.</p>
         <div>
             <a id="btn-generate-token" href="#" class="yellow_button">Gerar token</a>
         </div>
@@ -23,8 +23,9 @@
                 <li></li>
                 <li class='grid-35'>Token <span><%= tokens[i].token %></span></li>
                 <li class='grid-35'>Senha <span><%= tokens[i].pwd %></span></li>
-                <li class='grid-30'><a class="btn-cancel" href="#" data-pk="<%= tokens[i].token %>">
-                    <img src="img/delete-icon.png" alt="Deletar token"></a>
+                <li class='grid-30'>
+                	<% if(!tokens[i].is_active) { %><a class="btn-cancel" href="#" data-pk="<%= tokens[i].token %>"><img src="img/delete-icon.png" alt="Deletar token"></a><% } else { %><a class="" href="#" data-pk="<%= tokens[i].token %>"><img src="img/emuso-icon.png" alt="Token em Uso"></a> <% }%>
+                	
                 </li>
             </ul>
             </li>
